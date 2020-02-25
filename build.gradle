@@ -26,4 +26,7 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    
+     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation 'junit:junit:4.12'
 }
