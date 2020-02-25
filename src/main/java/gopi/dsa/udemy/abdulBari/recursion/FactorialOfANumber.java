@@ -8,7 +8,7 @@ package gopi.dsa.udemy.abdulBari.recursion;
  */
 public class FactorialOfANumber {
 
-	private static int fact(int n) {
+	public static int fact(int n) {
 		if (n == 0) {
 			return 1;
 		} else {
