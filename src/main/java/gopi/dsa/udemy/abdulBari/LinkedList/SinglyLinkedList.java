@@ -56,6 +56,55 @@ public class SinglyLinkedList
 		singlyLinkedList3.delete(2);
 		singlyLinkedList3.delete(0);
 		singlyLinkedList3.delete(4);
+
+		SinglyLinkedList singlyLinkedList4 = new SinglyLinkedList();
+		singlyLinkedList4.createLinkedList(2, 2, 4, 5, 6, 6, 7, 7, 7, 7, 8, 8, 8);
+		singlyLinkedList4.removeDuplicates();
+
+		SinglyLinkedList list5 = new SinglyLinkedList();
+		list5.createLinkedList(1, 2, 3, 4, 5);
+		list5.reverseLinkedList();
+		
+		list5 = new SinglyLinkedList();
+		list5.createLinkedList(1, 2, 3, 4, 5);
+		list5.display();
+		list5.reverseLinkedListRecursively(list5.head);
+		list5.display();
+	}
+
+	/**
+	 * 
+	 */
+	private void reverseLinkedList()
+	{
+		System.out.print("\nBefore Reversing :");
+		display();
+		Node prev = null, cur, next;
+		cur = head;
+		while (null != cur)
+		{
+			next = cur.next;
+			cur.next = prev;
+			prev = cur;
+			cur = next;
+		}
+		head = prev;
+		System.out.print("\nAfter Reversing :");
+		display();
+	}
+
+	private Node reverseLinkedListRecursively(Node temp)
+	{
+		if (temp == null || temp.next == null)
+		{
+			head.next=null;
+			head = temp;
+			return temp;
+
+		} else
+		{
+			return reverseLinkedListRecursively(temp.next).next = temp;
+		}
 	}
 
 	/**
@@ -190,16 +239,40 @@ public class SinglyLinkedList
 				{
 					prev.next = next.next;
 					next.next = null;
-				}
-				else
+				} else
 				{
-					System.out.print("\nAs position given :"+pos+" doesn't exist in the List");
+					System.out.print("\nAs position given :" + pos + " doesn't exist in the List");
 					display();
 				}
 			}
 		}
 		System.out.print("\nAfter Deleting element at pos: " + pos + " from List: ");
 		display();
+	}
+
+	public void removeDuplicates()
+	{
+		System.out.print("\nBefore Deleting of Duplicates ");
+		display();
+		Node cur = head;
+		Node next = head.next;
+		while (next != null)
+		{
+
+			if (cur.data != next.data)
+			{
+				cur = next;
+				next = next.next;
+			} else
+			{
+				cur.next = next.next;
+				next.next = null;
+				next = cur.next;
+			}
+		}
+		System.out.print("\nAfter  Deleting of Duplicates ");
+		display();
+
 	}
 
 	public void displayRecursively(Node temp)
