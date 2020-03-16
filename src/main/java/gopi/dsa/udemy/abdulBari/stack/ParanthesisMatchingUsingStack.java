@@ -6,7 +6,7 @@ package gopi.dsa.udemy.abdulBari.stack;
 /**
  * @author Gopi
  */
-public class ParanthesisMAtchingUsingStack
+public class ParanthesisMatchingUsingStack
 {
 	public static void main(String[] args)
 	{
