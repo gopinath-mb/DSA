@@ -1,7 +1,7 @@
 /**
  * Created With Love By Gopi on 23-Feb-2020
  */
-package gopi.dsa.udemy.abdulBari.recursion;
+package com.gopi.ds.recursions;
 
 /**
  * Here one fun calls another and other one will call this again.So one or more

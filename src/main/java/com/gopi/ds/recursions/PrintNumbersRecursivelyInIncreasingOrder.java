@@ -1,7 +1,7 @@
 /**
  * Created With Love By Gopi on 22-Feb-2020
  */
-package gopi.dsa.udemy.abdulBari.recursion;
+package com.gopi.ds.recursions;
 
 /**
  * @author Gopi

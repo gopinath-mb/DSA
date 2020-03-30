@@ -1,7 +1,7 @@
 /**
  * Created With Love By Gopi on 23-Feb-2020
  */
-package gopi.dsa.udemy.abdulBari.recursion;
+package com.gopi.ds.recursions;
 
 /**
  * Number of recursive calls got reduced.
