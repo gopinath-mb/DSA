@@ -64,11 +64,11 @@ public class SinglyLinkedList
 //    list5.createLinkedList(1, 2, 3, 4, 5);
 //    list5.reverseLinkedList();
 //
-//    list5 = new SinglyLinkedList();
-//    list5.createLinkedList(1, 2, 3, 4, 5);
-//    list5.display();
-//    list5.reverseLinkedListRecursively(list5.head);
-//    list5.display();
+    SinglyLinkedList    list5 = new SinglyLinkedList();
+    list5.createLinkedList(1, 2, 3, 4, 5);
+    list5.display();
+    list5.reverseLinkedListRecursively(list5.head);
+    list5.display();
 
 //    SinglyLinkedList list1 = new SinglyLinkedList();
 //    list1.createLinkedList(30, 40, 50, 60, 70);
@@ -76,19 +76,19 @@ public class SinglyLinkedList
 //    list2.createLinkedList(5, 15, 25, 35, 45, 55, 65, 75, 85, 95);
 //    mergeTwoLists(list1, list2);
 
-    SinglyLinkedList list1 = new SinglyLinkedList();
-    list1.createLinkedList(30, 40, 50, 60, 70, 80, 90, 20);
-    list1.hasLoop();
-
-    list1 = new SinglyLinkedList();
-    list1.createLinkedList(30, 40, 50, 60, 70, 80, 90, 20);
-    Node temp1 = list1.head;
-    temp1 = temp1.next;
-    Node temp2 = list1.head;
-    temp2 = temp2.next.next.next.next;
-    temp2.next = temp1;
-
-    list1.hasLoop();
+//    SinglyLinkedList list1 = new SinglyLinkedList();
+//    list1.createLinkedList(30, 40, 50, 60, 70, 80, 90, 20);
+//    list1.hasLoop();
+//
+//    list1 = new SinglyLinkedList();
+//    list1.createLinkedList(30, 40, 50, 60, 70, 80, 90, 20);
+//    Node temp1 = list1.head;
+//    temp1 = temp1.next;
+//    Node temp2 = list1.head;
+//    temp2 = temp2.next.next.next.next;
+//    temp2.next = temp1;
+//
+//    list1.hasLoop();
 
   }
 
@@ -222,6 +222,8 @@ public class SinglyLinkedList
    */
   public Node createLinkedList(int... elements)
   {
+    head=null;
+    last=null;
     System.out.println(
         "Creating LinkedList with elements: " + Arrays.toString(elements));
     for (int i : elements)

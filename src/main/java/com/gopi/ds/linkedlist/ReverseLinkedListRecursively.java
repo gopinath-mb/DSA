@@ -11,29 +11,74 @@ public class ReverseLinkedListRecursively
 
   public static void main(String[] args)
   {
+
     SinglyLinkedList list = new SinglyLinkedList();
-    list.insertAtTheEnd(10);
-    list.insertAtTheEnd(20);
-    list.insertAtTheEnd(30);
-    list.insertAtTheEnd(40);
-    list.insertAtTheEnd(50);
-    list.insertAtTheEnd(60);
-    list.display();
-   Node head = list.head;
-   reverseRecursively(head);
-    
+    Node head = list.createLinkedList(1, 2);
+    head = reverseRecursively(head);
+    list.displayRecursively(head);
+    System.out.println();
+    head = reverseRecursively(null,head);
+    list.displayRecursively(head);
+    System.out.println();
+
+    head = list.createLinkedList(1, 2, 3, 4, 5, 6, 7, 8);
+    head = reverseRecursively(head);
+    list.displayRecursively(head);
+    System.out.println();
+    head = reverseRecursively(null, head);
+    list.displayRecursively(head);
+    System.out.println();
+
+    head = list.createLinkedList(1, 2, 3);
+    head = reverseRecursively(head);
+    list.displayRecursively(head);
+    System.out.println();
+    head = reverseRecursively(null,head);
+    list.displayRecursively(head);
+    System.out.println();
+
+    head = list.createLinkedList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+    head = reverseRecursively(head);
+    list.displayRecursively(head);
+    System.out.println();
+    head = reverseRecursively(null,head);
+    list.displayRecursively(head);
+    System.out.println();
+
   }
 
   /**
-   * @param head
+   * @param curNode
    */
-  private static Node reverseRecursively(Node head)
+  private static Node reverseRecursively(Node curNode)
   {
+    if (curNode == null || curNode.next == null)
+    {
+      return curNode;
+    }
 
+    Node headNode = reverseRecursively(curNode.next);
+    Node next = curNode.next;
+    next.next = curNode;
+    curNode.next = null;
+    return headNode;
 
-    return null;
-    
   }
-  
-  
+
+  private static Node reverseRecursively(Node prev, Node cur)
+  {
+    if (cur == null )
+    {
+      return prev;
+    }
+    
+    Node nextNode=cur.next;
+    cur.next=prev;
+    prev=cur;
+    cur=nextNode;
+    
+   return reverseRecursively(prev,cur);
+
+  }
+
 }
