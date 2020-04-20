@@ -1,7 +1,7 @@
 /**
  * Created by gopinath_mb on 29-Mar-2020
  */
-package com.gopi.ds.linkedlist;
+package com.gopi.ds.linkedlist.old;
 
 import java.util.Arrays;
 

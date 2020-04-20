@@ -3,10 +3,6 @@
  */
 package com.gopi.ds.array.basic;
 
-import java.util.ArrayList;
-
-import org.checkerframework.checker.units.qual.Prefix;
-
 /**
  * @author gopinath_mb
  */

@@ -1,7 +1,7 @@
 /**
  * Created by gopinath_mb on 29-Mar-2020
  */
-package com.gopi.ds.linkedlist;
+package com.gopi.ds.linkedlist.old;
 
 /**
  * @author gopinath_mb

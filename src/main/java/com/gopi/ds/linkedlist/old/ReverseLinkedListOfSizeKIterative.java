@@ -1,12 +1,12 @@
 /**
  * Created by gopinath_mb on 29-Mar-2020
  */
-package com.gopi.ds.linkedlist;
+package com.gopi.ds.linkedlist.old;
 
 /**
  * @author gopinath_mb
  */
-public class ReverseLinkedListOfSizeK
+public class ReverseLinkedListOfSizeKIterative
 {
 
   public static void main(String[] args)
@@ -55,11 +55,8 @@ public class ReverseLinkedListOfSizeK
       count++;
     }
     if (next != null)
-    {
-      Node nextHead = reverseLinkedList(cur, k);
-      node.next = nextHead;
-
-    }
+    
+      node.next = reverseLinkedList(cur, k);
 
     return prev;
 
