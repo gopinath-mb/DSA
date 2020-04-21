@@ -9,9 +9,10 @@ package com.gopi.ds.linkedlist.basic;
 //https://practice.geeksforgeeks.org/problems/delete-without-head-pointer/1/?track=PC-W5-LL&batchId=154
 public class DleteNodeWithoutHeadPointer {
 
-  //this doesn't work if the node to be deleted is last node.
+  // this doesn't work if the node to be deleted is last node.
   void deleteNode(Node node) {
     node.data = node.next.data;
     node.next = node.next.next;
   }
+
 }

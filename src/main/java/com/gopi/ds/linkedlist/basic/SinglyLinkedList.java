@@ -96,6 +96,7 @@ public class SinglyLinkedList {
     }
     System.out.println();
   }
+  
 
   public int count() {
     int count = 0;
