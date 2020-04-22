@@ -6,32 +6,70 @@ package com.gopi.ds.linkedlist.basic;
 /**
  * @author gopinath_mb
  */
-public class SinglyLinkedList {
+public class SinglyLinkedList
+{
 
   private Node head;
 
-  public Node add(int... nodesData) {
-    for (int data : nodesData) {
+  public Node add(int... nodesData)
+  {
+    System.out.println("Creating Linked List with Nodes: ");
+    for (int data : nodesData)
+    {
+      System.out.print(data + " ");
       addLast(data);
     }
+    System.out.println();
     return head;
   }
 
-  public Node addFirst(int data) {
+  public Node add(Node... nodesData)
+  {
+    System.out.println("Creating Linked List with Nodes: ");
+    for (Node data : nodesData)
+    {
+      System.out.print(data.data + " ");
+      addLast(data);
+    }
+    System.out.println();
+    return head;
+  }
+
+  public Node addFirst(int data)
+  {
     Node node = new Node(data);
     node.next = head;
     head = node;
     return head;
   }
 
-  public Node addLast(int data) {
+  public Node addLast(int data)
+  {
     Node node = new Node(data);
-    if (null == head) {
+    if (null == head)
+    {
       head = node;
       return head;
     }
     Node temp = head;
-    while (null != temp.next) {
+    while (null != temp.next)
+    {
+      temp = temp.next;
+    }
+    temp.next = node;
+    return head;
+  }
+
+  public Node addLast(Node node)
+  {
+    if (null == head)
+    {
+      head = node;
+      return head;
+    }
+    Node temp = head;
+    while (null != temp.next)
+    {
       temp = temp.next;
     }
     temp.next = node;
@@ -41,15 +79,18 @@ public class SinglyLinkedList {
   /*
    * Pos starts from zero.Root is at Pos 0.
    */
-  public Node addAtPos(int pos, int data) {
+  public Node addAtPos(int pos, int data)
+  {
     Node node = new Node(data);
-    if (0 == pos || null == head) {
+    if (0 == pos || null == head)
+    {
       node.next = head;
       head = node;
       return head;
     }
     Node temp = head;
-    for (int i = 0; i < pos - 1 && null != temp.next; i++) {
+    for (int i = 0; i < pos - 1 && null != temp.next; i++)
+    {
       temp = temp.next;
     }
     node.next = temp.next;
@@ -57,11 +98,14 @@ public class SinglyLinkedList {
     return head;
   }
 
-  public Node removeFirst() {
-    if (null == head) {
+  public Node removeFirst()
+  {
+    if (null == head)
+    {
       return null;
     }
-    if (null == head.next) {
+    if (null == head.next)
+    {
       head = null;
       return head;
     }
@@ -71,44 +115,53 @@ public class SinglyLinkedList {
     return head;
   }
 
-  public Node removeLast() {
-    if (null == head) {
+  public Node removeLast()
+  {
+    if (null == head)
+    {
       return null;
     }
-    if (null == head.next) {
+    if (null == head.next)
+    {
       head = null;
       return head;
     }
     Node temp = head;
-    while (null != temp.next.next) {
+    while (null != temp.next.next)
+    {
       temp = temp.next;
     }
     temp.next = null;
     return head;
   }
 
-  public void display() {
+  public void display()
+  {
     System.out.print("Printing Linked List Elements: ");
     Node temp = head;
-    while (null != temp) {
+    while (null != temp)
+    {
       System.out.print(temp.data + " ");
       temp = temp.next;
     }
     System.out.println();
   }
-  
 
-  public int count() {
+  public int count()
+  {
     int count = 0;
     Node temp = head;
-    while (null != temp) {
+    while (null != temp)
+    {
       count++;
       temp = temp.next;
     }
     return count;
   }
+  
 
-  public static void main(String[] args) {
+  public static void main(String[] args)
+  {
     SinglyLinkedList sll = new SinglyLinkedList();
     sll.addAtPos(5, 10);
     sll.addAtPos(3, 40);

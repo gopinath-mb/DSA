@@ -6,17 +6,24 @@ package com.gopi.ds.linkedlist.basic;
 /**
  * @author gopinath_mb
  */
-public class Node {
+public class Node
+{
 
-  int data;
+  public int data;
 
-  Node prev;
+  public Node prev;
 
-  Node next;
+  public Node next;
 
-  public Node(int data) {
+  public Node(int data)
+  {
 
     this.data = data;
 
+  }
+  
+  public String toString()
+  {
+    return data+"";
   }
 }
