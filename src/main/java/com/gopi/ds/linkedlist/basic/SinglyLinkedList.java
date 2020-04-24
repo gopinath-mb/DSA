@@ -13,12 +13,20 @@ public class SinglyLinkedList
 
   public Node add(int... nodesData)
   {
-    System.out.println("Creating Linked List with Nodes: ");
+    
+    StringBuilder sb = new StringBuilder();
     for (int data : nodesData)
     {
-      System.out.print(data + " ");
+      if (sb.length() == 0)
+      {
+        sb.append(data);
+      } else
+      {
+        sb.append("->" + data);
+      }
       addLast(data);
     }
+    System.out.print("Created Linked List with Nodes: "+sb.toString());
     System.out.println();
     return head;
   }
@@ -158,7 +166,6 @@ public class SinglyLinkedList
     }
     return count;
   }
-  
 
   public static void main(String[] args)
   {

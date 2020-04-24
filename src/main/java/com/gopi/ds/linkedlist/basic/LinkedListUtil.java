@@ -58,17 +58,24 @@ public class LinkedListUtil
 
   }
 
-  public static List<Integer> getLinkedList(Node head)
+  public static String getLinkedList(Node head)
   {
 
-    List<Integer> list = new ArrayList<Integer>();
+    StringBuilder sb = new StringBuilder();
     Node temp = head;
     while (null != temp)
     {
-      list.add(temp.data);
+      if (sb.length() == 0)
+      {
+        sb.append(temp.data);
+
+      } else
+      {
+        sb.append("->" + temp.data);
+      }
       temp = temp.next;
     }
-    return list;
+    return sb.toString();
 
   }
 }
